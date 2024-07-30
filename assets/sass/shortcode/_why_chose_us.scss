@@ -1,0 +1,58 @@
+.cs_why_chose_us.cs_style_1 {
+  position: relative;
+  .cs_why_chose_us_in {
+    max-width: 600px;
+    position: relative;
+    z-index: 2;
+    margin-left: 34%;
+    @media (max-width: 991px) {
+      margin-left: 20%;
+    }
+    @media (max-width: 767px) {
+      margin-left: 0%;
+    }
+  }
+  .cs_why_chose_us_img {
+    position: absolute;
+    top: 0;
+    right: 66%;
+  }
+}
+.cs_why_chose_us.cs_style_2 {
+  position: relative;
+  .cs_why_chose_us_thumb {
+    margin-right: 50px;
+    margin-top: 65px;
+    position: relative;
+  }
+  .container {
+    position: relative;
+    z-index: 3;
+  }
+  .cs_why_chose_us_img {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    @media (max-width: 575px) {
+      display: none;
+    }
+  }
+  .cs_success_box {
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    border: 2px solid var(--accent);
+    display: flex;
+    flex-direction: column;
+    background-color: var(--heading-color);
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    p {
+      font-size: 12px;
+      line-height: 1.6em;
+    }
+  }
+}

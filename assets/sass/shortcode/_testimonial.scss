@@ -1,0 +1,95 @@
+/*--------------------------------------------------------------
+  15. Testimonial
+----------------------------------------------------------------*/
+.cs_testimonial_1_section {
+  position: relative;
+  min-height: 550px;
+
+  .cs_testimonial_1_thumb {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 39%;
+    background-size: cover;
+    background-position: left center;
+    @media (max-width: 991px) {
+      display: none;
+    }
+  }
+  .cs_testimonial_1_quote_wrap {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 120px;
+    width: 120px;
+    border: 3px solid var(--accent);
+    border-radius: 50%;
+    padding: 7px;
+    left: -40px;
+  }
+  .cs_testimonial_1_quote {
+    height: 100%;
+    border-radius: inherit;
+  }
+}
+.cs_testimonial.cs_style_1 {
+  .cs_rating {
+    margin-bottom: 25px;
+  }
+  .cs_testimonial_avatar_box {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  .cs_testimonial_avatar_img {
+    flex: none;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    border: 2px solid var(--accent);
+  }
+}
+.cs_testimonial.cs_style_2 {
+  padding: 1px 30px 25px 30px;
+  margin-top: 40px;
+  position: relative;
+  @media (max-width: 1400px) {
+    padding: 1px 20px 25px 20px;
+  }
+  .cs_testimonial_in {
+    position: relative;
+    z-index: 2;
+  }
+  .cs_testimonial_avatar_img {
+    height: 80px;
+    width: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid var(--border);
+    transition: all 0.4s ease;
+    margin-top: -40px;
+    display: inline-block;
+    margin-bottom: 12px;
+  }
+  .cs_rating {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+  }
+  .cs_testimonial_blockquote {
+    font-style: initial;
+  }
+  .cs_quore_icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.04;
+  }
+  &:hover {
+    .cs_testimonial_avatar_img {
+      border-color: var(--accent);
+    }
+  }
+}

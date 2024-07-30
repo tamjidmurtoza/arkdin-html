@@ -1,0 +1,214 @@
+/*--------------------------------------------------------------
+  19. Team
+----------------------------------------------------------------*/
+.cs_team_member.cs_style_1 {
+  background-color: #ecf1f5;
+  padding: 30px 20px 28px 20px;
+  position: relative;
+  max-width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+  p,
+  .cs_team_member_phone_number,
+  .cs_team_member_phone_number img {
+    transition: all 0.4s ease;
+  }
+  h3 {
+    a {
+      background-repeat: no-repeat;
+      background-image: linear-gradient(
+        90deg,
+        currentColor 0,
+        currentColor 100%
+      );
+      transition: background-size 0.42s cubic-bezier(0.49, 0.49, 0.08, 1),
+        color 0.27s ease-out;
+      background-position: 100% calc(100% - 0px);
+      background-size: 0 1px;
+      &:hover {
+        color: #fff;
+        background-size: 100% 1px;
+        background-position: 0 calc(100% - 0px);
+      }
+    }
+  }
+  .cs_team_member_shape {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    opacity: 0.05;
+    transition: all 0.4s ease;
+  }
+  .cs_team_member_thumb {
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+    position: relative;
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      border-radius: inherit;
+    }
+  }
+  .cs_team_member_phone_number {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+    border-top: 1px solid rgb(105 105 105 / 30%);
+    padding-top: 20px;
+    margin-top: 8px;
+  }
+  .cs_team_member_in {
+    position: relative;
+    z-index: 1;
+  }
+  .cs_member_social_btns {
+    .cs_member_social_item {
+      height: 35px;
+      width: 35px;
+      border-radius: 50%;
+    }
+    span.cs_member_social_item {
+      color: var(--heading-color);
+      background-color: #fff;
+    }
+    a.cs_member_social_item {
+      color: #fff;
+      background-color: var(--heading-color);
+      transform: scale(0);
+      &:hover {
+        background-color: var(--body-color);
+        color: #fff;
+      }
+    }
+    .cs_member_social_item {
+      position: absolute;
+      &:first-child {
+        left: 50%;
+        margin-left: -17px;
+        bottom: -17px;
+      }
+      &:nth-child(2) {
+        right: 30px;
+        bottom: 0;
+      }
+      &:nth-child(3) {
+        right: -5px;
+        bottom: 40px;
+      }
+      &:nth-child(4) {
+        right: -16px;
+        bottom: 92px;
+      }
+      &:nth-child(5) {
+        right: 4px;
+        bottom: 142px;
+      }
+    }
+  }
+  &:hover {
+    .cs_team_member_shape {
+      opacity: 1;
+    }
+    h3,
+    p,
+    .cs_team_member_phone_number {
+      color: #fff;
+    }
+    .cs_team_member_phone_number {
+      border-color: rgba(216, 221, 225, 0.35);
+    }
+    .cs_team_member_phone_number img {
+      filter: brightness(0) invert(1);
+    }
+    a.cs_member_social_item {
+      transform: scale(1);
+      &:nth-child(2) {
+        transition-delay: 0.1s;
+      }
+      &:nth-child(3) {
+        transition-delay: 0.2s;
+      }
+      &:nth-child(4) {
+        transition-delay: 0.3s;
+      }
+      &:nth-child(5) {
+        transition-delay: 0.4s;
+      }
+    }
+  }
+}
+
+.cs_team_member.cs_style_2 {
+  margin-left: 30px;
+  background-color: #fff;
+  box-shadow: 0px 10px 50px 0px rgba(0, 0, 0, 0.08);
+  border-radius: 5px;
+  .cs_member_social_btns {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 25px 20px;
+    background-color: rgba(255, 85, 0, 0.03);
+    transition: all 0.4s ease;
+  }
+  .cs_member_social_item {
+    height: 30px;
+    width: 30px;
+    background-color: #fff;
+    color: var(--accent);
+  }
+  .cs_member_social_item {
+    &:hover {
+      background-color: var(--heading-color);
+      color: #fff;
+    }
+  }
+  .cs_member_social_btns_wrap {
+    width: 100%;
+    position: relative;
+  }
+  .cs_team_member_thumb {
+    padding: 15px;
+    padding-bottom: 30px;
+  }
+  .cs_team_member_info {
+    padding: 22px 15px;
+  }
+  .cs_member_social_btns_shapes {
+    opacity: 0.03;
+    width: 30px;
+    position: absolute;
+    left: -30px;
+    top: 0;
+    height: 100%;
+    background-color: var(--accent);
+    transition: all 0.4s ease;
+    svg {
+      position: absolute;
+      left: 0px;
+      &:first-child {
+        top: -26px;
+      }
+      &:last-child {
+        bottom: -26px;
+      }
+    }
+  }
+  &:hover {
+    .cs_member_social_btns {
+      background-color: var(--accent);
+    }
+    .cs_member_social_btns_shapes {
+      opacity: 1;
+    }
+  }
+}

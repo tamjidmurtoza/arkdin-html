@@ -1,0 +1,207 @@
+.cs_service_card.cs_style_1 {
+  position: relative;
+  &:hover {
+    .cs_service_card_icon {
+      background-color: var(--accent);
+      img {
+        filter: brightness(0) invert(1);
+      }
+    }
+    .cs_service_card_bg {
+      color: var(--accent);
+    }
+    .cs_service_card_number {
+      -webkit-text-stroke: 1px #fff;
+    }
+  }
+  .cs_service_card_bg {
+    position: absolute;
+    top: -40px;
+    width: 486px;
+    left: 50%;
+    margin-left: 6px;
+    transform: translateX(-50%);
+    color: var(--border);
+    transition: all 0.4s ease;
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+    @media (max-width: 1400px) {
+      width: 456px;
+    }
+    @media (max-width: 1199px) {
+      width: 380px;
+      top: -81px;
+      margin-left: 0;
+    }
+  }
+  .cs_service_card_in {
+    position: relative;
+    z-index: 2;
+    height: 384px;
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    @media (max-width: 1400px) {
+      height: 374px;
+    }
+    @media (max-width: 1199px) {
+      height: 335px;
+    }
+  }
+
+  .cs_service_card_icon {
+    height: 80px;
+    width: 80px;
+    box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.08);
+    border-radius: 50%;
+    background-color: #fff;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: all 0.4s ease;
+    @media (max-width: 1199px) {
+      height: 70px;
+      width: 70px;
+      padding: 15px;
+      bottom: 0;
+    }
+    img {
+      transition: inherit;
+    }
+  }
+  .cs_service_card_number {
+    color: transparent;
+    -webkit-text-stroke: 1px var(--body-color);
+    height: 90px;
+    transition: all 0.4s ease;
+    @media (max-width: 1199px) {
+      height: 70px;
+    }
+  }
+}
+.cs_service_card.cs_style_2 {
+  height: 228px;
+  position: relative;
+  max-width: 282px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0px 20px 10px;
+  @media only screen and (min-width: 1200px) and (max-width: 1400px) {
+    height: 208px;
+  }
+  @media (max-width: 767px) {
+    height: 208px;
+  }
+  .cs_service_card_in {
+    position: relative;
+    z-index: 1;
+  }
+  .cs_service_card_bg {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    @media only screen and (min-width: 1200px) and (max-width: 1400px) {
+      svg {
+        width: 257px;
+        height: 208px;
+      }
+    }
+    @media (max-width: 767px) {
+      svg {
+        width: 257px;
+        height: 208px;
+      }
+    }
+  }
+  .cs_service_card_shape_1 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    opacity: 0.16;
+  }
+  .cs_service_card_shape_2 {
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    opacity: 0.16;
+  }
+  img {
+    display: inline-block;
+  }
+  .cs_service_card_icon img,
+  .cs_service_card_title,
+  .cs_service_card_bg svg path {
+    transition: all 0.3s ease;
+  }
+  .cs_service_card_icon {
+    img {
+      height: 60px;
+    }
+  }
+}
+
+.cs_service_card_2_details {
+  display: flex;
+  align-items: center;
+  @media (max-width: 991px) {
+    flex-direction: column;
+  }
+
+  .cs_service_card_2_details_thumb {
+    flex: none;
+  }
+  .cs_service_card_2_details_left {
+    flex: 1;
+    padding: 52px 100px 60px 60px;
+    @media (max-width: 1400px) {
+      padding: 30px 50px 35px 30px;
+    }
+    @media (max-width: 1199px) {
+      br {
+        display: none;
+      }
+    }
+    @media (max-width: 991px) {
+      padding: 30px 20px;
+    }
+  }
+}
+.slick-slide {
+  .cs_slide_item_sm {
+    cursor: pointer;
+  }
+}
+.slick-current {
+  .cs_service_card.cs_style_2 {
+    .cs_service_card_icon {
+      img {
+        filter: brightness(0) invert(1);
+      }
+    }
+    .cs_service_card_title {
+      color: #fff;
+    }
+    .cs_service_card_bg {
+      svg {
+        path {
+          &:first-child {
+            fill: var(--heading-color);
+          }
+          &:last-child {
+            fill: var(--accent);
+          }
+        }
+      }
+    }
+    .cs_service_card_shape_1,
+    .cs_service_card_shape_2 {
+      filter: brightness(0) invert(1);
+      opacity: 0.24;
+    }
+  }
+}

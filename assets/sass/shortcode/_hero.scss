@@ -1,0 +1,252 @@
+/*--------------------------------------------------------------
+  10. Hero
+----------------------------------------------------------------*/
+.cs_hero.cs_style_1,
+.cs_hero.cs_style_2 {
+  .cs_hero_text {
+    max-width: 680px;
+    position: relative;
+    z-index: 1;
+    @media (max-width: 991px) {
+      max-width: 500px;
+    }
+  }
+  .cs_hero_subtitle {
+    max-width: 550px;
+  }
+  .cs_hero_mini_title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .cs_hero_btns {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px 40px;
+    @media (max-width: 991px) {
+      gap: 15px 25px;
+    }
+  }
+  .cs_hero_mini_title {
+    img {
+      flex: none;
+    }
+    &.cs_white_color {
+      img {
+        filter: brightness(0) invert(1);
+      }
+    }
+  }
+}
+.cs_hero.cs_style_1 {
+  height: 850px;
+  position: relative;
+  @media (max-width: 991px) {
+    padding: 100px 0 150px;
+    height: initial;
+    min-height: 750px;
+  }
+  .cs_hero_img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    @media (max-width: 1600px) {
+      right: -15%;
+    }
+    @media (max-width: 1199px) {
+      display: none;
+    }
+    img {
+      height: 100%;
+    }
+  }
+  .cs_hero_player_btn {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 18px;
+    color: #fff;
+    font-weight: 500;
+    &:hover {
+      .cs_hero_play_btn_text {
+        &::before {
+          width: 100%;
+        }
+      }
+    }
+  }
+  .cs_hero_play_btn_text {
+    position: relative;
+    &::before {
+      content: '';
+      height: 1px;
+      width: 0%;
+      background-color: var(--accent);
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      transition: all 0.4s ease;
+    }
+  }
+}
+.cs_hero.cs_style_2 {
+  padding: 110px 0 0px 0;
+  position: relative;
+  @media (max-width: 1199px) {
+    padding-top: 90px;
+  }
+  .cs_slider.cs_style_1 {
+    z-index: 2;
+  }
+  .cs_hero_text {
+    max-width: 720px;
+    background: linear-gradient(
+      89deg,
+      rgba(255, 255, 255, 0.18) 0.34%,
+      rgba(153, 153, 153, 0) 105.75%
+    );
+    padding: 40px;
+    @media (max-width: 767px) {
+      padding: 30px 25px;
+      padding-right: 0;
+    }
+    @media (max-width: 400px) {
+      padding-left: 18px;
+    }
+  }
+  .cs_hero_in {
+    height: 750px;
+    position: relative;
+    z-index: 2;
+    @media (max-width: 1050px) {
+      padding-bottom: 75px;
+    }
+  }
+  .cs_hero_bg {
+    position: absolute;
+    height: 100%;
+    width: 84%;
+    left: 0;
+    top: 0;
+    @media (max-width: 991px) {
+      width: 100%;
+    }
+  }
+  .cs_hero_shape {
+    position: absolute;
+    height: 100%;
+    width: 32%;
+    right: 0;
+    top: 0;
+    @media (max-width: 991px) {
+      display: none;
+    }
+  }
+  .cs_hero_feature_list {
+    display: flex;
+    min-height: 100px;
+    background-color: #fff6f2;
+    align-items: center;
+    justify-content: space-around;
+    z-index: 1;
+    position: relative;
+    width: 68%;
+    padding: 10px 40px;
+    gap: 10px 80px;
+    color: var(--accent);
+    color: #fff6f2;
+    -webkit-text-stroke: 1px var(--body-color);
+    li {
+      position: relative;
+      padding-left: 40px;
+      svg,
+      img {
+        position: absolute;
+        left: 0;
+        top: 8px;
+        color: var(--accent);
+      }
+    }
+  }
+  .cs_hero_bg_shape_1 {
+    top: 76px;
+    left: 50%;
+    img {
+      animation: spinAnimaiton 6s linear infinite;
+    }
+  }
+  .cs_hero_bg_shape_2 {
+    bottom: 90px;
+    left: 13%;
+    img {
+      animation: spinAnimaiton 6s linear infinite;
+      animation-delay: 2s;
+    }
+  }
+  .cs_hero_bg_shape_3 {
+    bottom: 23%;
+    left: 72%;
+    img {
+      animation: spinAnimaiton 6s linear infinite;
+      animation-delay: 4s;
+    }
+  }
+}
+@keyframes spinAnimaiton {
+  0% {
+    transform: rotateX(-20deg) rotateY(0deg);
+  }
+
+  75% {
+    transform: rotateX(-20deg) rotateY(360deg);
+  }
+  100% {
+    transform: rotateX(-20deg) rotateY(360deg);
+  }
+}
+
+// Start Moving Section
+.cs_moving_section_wrap {
+  font-family: helvetica;
+  overflow: hidden;
+  width: 68%;
+  background-color: #fff6f2;
+  @media (max-width: 991px) {
+    width: 100%;
+  }
+}
+.cs_moving_section_in {
+  display: flex;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  min-width: 100%;
+  &:hover {
+    .cs_moving_section {
+      animation-play-state: paused;
+    }
+  }
+}
+.cs_moving_section {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  animation: slideLeft 20s linear infinite;
+}
+.cs_moving_duration_40 {
+  animation-duration: 40s;
+}
+.cs_reverse_animation {
+  animation-direction: reverse !important;
+}
+
+@keyframes slideLeft {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+// End Moving Section
