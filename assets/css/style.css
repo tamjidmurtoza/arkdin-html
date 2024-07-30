@@ -19,28 +19,25 @@
 /*--------------------------------------------------------------
 >> TABLE OF CONTENTS:
 ----------------------------------------------------------------
-1. Typography
-2. Preloader
-3. Spacing
-4. General
-5. Slider
-6. Video Modal
-7. Header
-8. Footer
-9. Sidebar
-10. Hero
-11. Banner
-12. Iconbox
-13. Posts
-14. CTA
-15. Testimonial
-16. Portfolio
-17. Counter
-18. Casestudie
-19. Team
-20. Imagebox
-21. Pricing
-22. Card
+01. Typography
+02. Preloader
+03. Spacing
+04. General
+05. Slider
+06. Video Modal
+07. Header
+08. Footer
+09. Hero
+10. Iconbox
+11. Posts
+12. CTA
+13. Testimonial
+14. Team
+15. Pricing
+16. Card
+17. Service Card
+18. About
+19. Why Chose Us
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
 1. Typography
@@ -3078,7 +3075,7 @@ label {
   background-color: var(--accent);
 }
 
-.cs_single_product_nav_arrows,
+.cs_service_product_nav_arrows,
 .cs_slider_arrows.cs_style_2 {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -3086,8 +3083,8 @@ label {
   gap: 15px;
 }
 
-.cs_single_product_nav_arrows .cs_single_product_nav_left_arrow,
-.cs_single_product_nav_arrows .cs_single_product_nav_right_arrow,
+.cs_service_product_nav_arrows .cs_service_product_nav_left_arrow,
+.cs_service_product_nav_arrows .cs_service_product_nav_right_arrow,
 .cs_slider_arrows.cs_style_2 .cs_slider_arrow {
   height: 50px;
   width: 50px;
@@ -3096,8 +3093,8 @@ label {
   -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
 }
-.cs_single_product_nav_arrows .cs_single_product_nav_left_arrow:hover,
-.cs_single_product_nav_arrows .cs_single_product_nav_right_arrow:hover,
+.cs_service_product_nav_arrows .cs_service_product_nav_left_arrow:hover,
+.cs_service_product_nav_arrows .cs_service_product_nav_right_arrow:hover,
 .cs_slider_arrows.cs_style_2 .cs_slider_arrow:hover {
   background-color: var(--heading-color);
 }
@@ -3116,7 +3113,7 @@ label {
       flex-wrap: wrap;
   gap: 45px;
 }
-.cs_slider_heading_1 .cs_single_product_nav_arrows,
+.cs_slider_heading_1 .cs_service_product_nav_arrows,
 .cs_slider_heading_1 .cs_slider_arrows.cs_style_2 {
   margin-bottom: 14px;
 }
@@ -4584,10 +4581,7 @@ label {
 }
 
 /*--------------------------------------------------------------
-  9. Sidebar
-----------------------------------------------------------------*/
-/*--------------------------------------------------------------
-  10. Hero
+  9. Hero
 ----------------------------------------------------------------*/
 .cs_hero.cs_style_1 .cs_hero_text,
 .cs_hero.cs_style_2 .cs_hero_text {
@@ -4926,10 +4920,7 @@ label {
   }
 }
 /*--------------------------------------------------------------
-  11. Banner
-----------------------------------------------------------------*/
-/*--------------------------------------------------------------
-  12. Iconbox
+  10. Iconbox
 ----------------------------------------------------------------*/
 .cs_iconbox.cs_style_1 .cs_iconbox_icon img {
   height: 60px;
@@ -5001,7 +4992,7 @@ label {
 }
 
 /*--------------------------------------------------------------
-  13. Posts
+  11. Posts
 ----------------------------------------------------------------*/
 .cs_pagination_box {
   gap: 10px;
@@ -6013,7 +6004,7 @@ label {
 }
 
 /*--------------------------------------------------------------
-  14. CTA
+  12. CTA
 ----------------------------------------------------------------*/
 .cs_cta.cs_style_1 {
   position: relative;
@@ -6080,7 +6071,7 @@ label {
 }
 
 /*--------------------------------------------------------------
-  15. Testimonial
+  13. Testimonial
 ----------------------------------------------------------------*/
 .cs_testimonial_1_section {
   position: relative;
@@ -6187,13 +6178,7 @@ label {
 }
 
 /*--------------------------------------------------------------
-  17. Counter
-----------------------------------------------------------------*/
-/*--------------------------------------------------------------
-  18. Casestudie
-----------------------------------------------------------------*/
-/*--------------------------------------------------------------
-  19. Team
+  14. Team
 ----------------------------------------------------------------*/
 .cs_team_member.cs_style_1 {
   background-color: #ecf1f5;
@@ -6418,10 +6403,7 @@ label {
 }
 
 /*--------------------------------------------------------------
-  20. Imagebox
-----------------------------------------------------------------*/
-/*--------------------------------------------------------------
-  21. Pricing
+  15. Pricing
 ----------------------------------------------------------------*/
 .cs_pricing_plan.cs_style_1 {
   padding: 30px 30px 40px 30px;
@@ -6527,7 +6509,7 @@ label {
 }
 
 /*--------------------------------------------------------------
-  22. Card
+  16. Card
 ----------------------------------------------------------------*/
 .cs_card.cs_style_1 {
   position: relative;
@@ -6605,6 +6587,9 @@ label {
   width: 305px;
 }
 
+/*--------------------------------------------------------------
+  17. Service Card
+----------------------------------------------------------------*/
 .cs_service_card.cs_style_1 {
   position: relative;
 }
@@ -6845,7 +6830,7 @@ label {
 }
 
 /*--------------------------------------------------------------
-  11. About
+  18. About
 ----------------------------------------------------------------*/
 .cs_tab {
   display: none;
@@ -7013,6 +6998,9 @@ label {
      object-fit: cover;
 }
 
+/*--------------------------------------------------------------
+  19. Why Chose Us
+----------------------------------------------------------------*/
 .cs_why_chose_us.cs_style_1 {
   position: relative;
 }

@@ -284,13 +284,13 @@
   }
 }
 
-.cs_single_product_nav_arrows,
+.cs_service_product_nav_arrows,
 .cs_slider_arrows.cs_style_2 {
   display: flex;
   gap: 15px;
 }
-.cs_single_product_nav_arrows .cs_single_product_nav_left_arrow,
-.cs_single_product_nav_arrows .cs_single_product_nav_right_arrow,
+.cs_service_product_nav_arrows .cs_service_product_nav_left_arrow,
+.cs_service_product_nav_arrows .cs_service_product_nav_right_arrow,
 .cs_slider_arrows.cs_style_2 .cs_slider_arrow {
   height: 50px;
   width: 50px;
@@ -308,7 +308,7 @@
   align-items: flex-end;
   flex-wrap: wrap;
   gap: 45px;
-  .cs_single_product_nav_arrows,
+  .cs_service_product_nav_arrows,
   .cs_slider_arrows.cs_style_2 {
     margin-bottom: 14px;
   }

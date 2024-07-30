@@ -16,21 +16,11 @@
   | 3. Sticky Header
   | 4. Dynamic Background
   | 5. Slick Slider
-  | 6. Horizonta Full Screen Swiper Slider
-  | 7. Vertical Full Screen Swiper Slider
-  | 8. Parallax Swiper Slider
-  | 9. Modal Video
-  | 10. Scroll Up
-  | 11. Ripple
-  | 12. Counter Animation
-  | 13. Accordian
-  | 14. Tabs
-  | 15. Hover To Active
-  | 16. Progress Bar
-  | 17. Review
-  | 18. Shining Active
-  | 19. Hobble Effect
-  | 20. Scroll Slider
+  | 6. Modal Video
+  | 7. Accordian
+  | 8. Tabs
+  | 9. Progress Bar
+  | 10. Review
   |
   */
 
@@ -49,33 +39,18 @@
     mainNav();
     stickyHeader();
     dynamicBackground();
-    counterInit();
     slickInit();
     modalVideo();
-    scrollUp();
-    rippleInit();
     accordian();
     tabs();
-    hoverActive();
     progressBar();
     review();
-    fullScreenHorizontalSlider();
-    fullScreenVerticalSlider();
-    parallaxSwiperSlider();
-    shiningActive();
-    hobbleEffect();
-    scrollSliderActive();
-
     if ($.exists('.wow')) {
       new WOW().init();
     }
     if ($.exists('.player')) {
       $('.player').YTPlayer();
     }
-  });
-
-  $(window).on('scroll', function () {
-    showScrollUp();
   });
 
   /*--------------------------------------------------------------
@@ -111,32 +86,6 @@
     $('.cs_menu_dropdown_toggle').on('click', function () {
       $(this).toggleClass('active').siblings('ul').slideToggle();
       $(this).parent().toggleClass('active');
-    });
-
-    /* Side Nav */
-    $('.cs_hamburger_info_btn').on('click', function () {
-      $('.cs_side_header').addClass('active');
-      $('html').addClass('cs_hamburger_active');
-    });
-    $('.cs_close, .cs_side_header_overlay').on('click', function () {
-      $('.cs_side_header').removeClass('active');
-      $('html').removeClass('cs_hamburger_active');
-    });
-
-    /* Hamburger Menu */
-    $('.cs_hamburger_menu .menu-item-has-children>a').on('click', function (e) {
-      e.preventDefault();
-      $(this).siblings('ul').slideToggle();
-      $(this).siblings('.cs_menu_dropdown_toggle').toggleClass('active');
-    });
-
-    $('.cs_hamburger_menu_btn').on('click', function (e) {
-      $('.cs_hamburger_header, .cs_hamburger_overlay').addClass('active');
-      $('html').addClass('cs_hamburger_active');
-    });
-    $('.cs_close_hamburger, .cs_hamburger_overlay').on('click', function (e) {
-      $('.cs_hamburger_header, .cs_hamburger_overlay').removeClass('active');
-      $('html').removeClass('cs_hamburger_active');
     });
   }
 
@@ -268,29 +217,28 @@
               breakpoint: 576,
               settings: {
                 slidesToShow: xsPoing,
-                slidesToScroll: xsPoing,
               },
             },
           ],
         });
       });
     }
-    // // // // // // // //
-    $('.cs_single_product_thumb').slick({
+    /* Service Product */
+    $('.cs_service_product_thumb').slick({
       slidesToShow: 1,
       slidesToScroll: 1,
       arrows: false,
-      asNavFor: '.cs_single_product_nav',
+      asNavFor: '.cs_service_product_nav',
       appendDots: $('.cs_pagination_2'),
     });
 
-    $('.cs_single_product_nav').slick({
+    $('.cs_service_product_nav').slick({
       slidesToShow: 4,
       slidesToScroll: 1,
-      asNavFor: '.cs_single_product_thumb',
+      asNavFor: '.cs_service_product_thumb',
       focusOnSelect: true,
-      prevArrow: $('.cs_single_product_nav_left_arrow'),
-      nextArrow: $('.cs_single_product_nav_right_arrow'),
+      prevArrow: $('.cs_service_product_nav_left_arrow'),
+      nextArrow: $('.cs_service_product_nav_right_arrow'),
       responsive: [
         {
           breakpoint: 1400,
@@ -321,106 +269,7 @@
   }
 
   /*--------------------------------------------------------------
-    6. Horizonta Full Screen Swiper Slider
-  --------------------------------------------------------------*/
-  function fullScreenHorizontalSlider() {
-    if ($.exists('.cs_fullscreen_horizontal_slider')) {
-      var swiper = new Swiper('.cs_fullscreen_horizontal_slider', {
-        mousewheel: true,
-        loop: true,
-        speed: 1000,
-        pagination: {
-          el: '.cs_swiper_pagination',
-          clickable: true,
-        },
-      });
-    }
-  }
-
-  /*--------------------------------------------------------------
-    7. Vertical Full Screen Swiper Slider
-  --------------------------------------------------------------*/
-  function fullScreenVerticalSlider() {
-    if ($.exists('.cs_fullscreen_vertical_slider')) {
-      var swiper = new Swiper('.cs_fullscreen_vertical_slider', {
-        direction: 'vertical',
-        mousewheel: true,
-        loop: true,
-        speed: 1000,
-        pagination: {
-          el: '.cs_swiper_pagination',
-          type: 'fraction',
-        },
-        navigation: {
-          nextEl: '.cs_swiper_button_next',
-          prevEl: '.cs_swiper_button_prev',
-        },
-      });
-    }
-  }
-
-  /*--------------------------------------------------------------
-    8. Parallax Swiper Slider
-  --------------------------------------------------------------*/
-  function parallaxSwiperSlider() {
-    if ($.exists('.cs_parallax_slider')) {
-      let mainSliderSelector = '.cs_parallax_slider',
-        interleaveOffset = 0.5;
-      let mainSliderOptions = {
-        loop: true,
-        speed: 1000,
-        autoplay: false,
-        loopAdditionalSlides: 10,
-        grabCursor: true,
-        watchSlidesProgress: true,
-        navigation: false,
-        pagination: {
-          el: '.cs_swiper_pagination_2',
-          clickable: true,
-          renderBullet: function (index, className) {
-            return '<span class="' + className + '">' + (index + 1) + '</span>';
-          },
-        },
-        on: {
-          init: function () {
-            this.autoplay.stop();
-          },
-          imagesReady: function () {
-            this.el.classList.remove('loading');
-            this.autoplay.start();
-          },
-          progress: function (swiper) {
-            for (let i = 0; i < swiper.slides.length; i++) {
-              let slideProgress = swiper.slides[i].progress,
-                innerOffset = swiper.width * interleaveOffset,
-                innerTranslate = slideProgress * innerOffset;
-
-              swiper.slides[i].querySelector(
-                '.cs_swiper_parallax_bg',
-              ).style.transform = 'translateX(' + innerTranslate + 'px)';
-            }
-          },
-          touchStart: function (swiper) {
-            for (let i = 0; i < swiper.slides.length; i++) {
-              swiper.slides[i].style.transition = '';
-            }
-          },
-          setTransition: function (swiper, transition) {
-            for (let i = 0; i < swiper.slides.length; i++) {
-              swiper.slides[i].style.transition = transition + 'ms';
-              swiper.slides[i].querySelector(
-                '.cs_swiper_parallax_bg',
-              ).style.transition = transition + 'ms';
-            }
-          },
-        },
-      };
-      let mainSlider = new Swiper(mainSliderSelector, mainSliderOptions);
-    }
-  }
-
-  /*--------------------------------------------------------------
-    9. Modal Video
+    6. Modal Video
   --------------------------------------------------------------*/
   function modalVideo() {
     if ($.exists('.cs_video_open')) {
@@ -461,70 +310,7 @@
   }
 
   /*--------------------------------------------------------------
-    10. Scroll Up
-  --------------------------------------------------------------*/
-  function scrollUp() {
-    $('.cs_scrollup').on('click', function (e) {
-      e.preventDefault();
-      $('html,body').animate(
-        {
-          scrollTop: 0,
-        },
-        0,
-      );
-    });
-  }
-
-  /* For Scroll Up */
-  function showScrollUp() {
-    let scroll = $(window).scrollTop();
-    if (scroll >= 350) {
-      $('.cs_scrollup').addClass('cs_scrollup_show');
-    } else {
-      $('.cs_scrollup').removeClass('cs_scrollup_show');
-    }
-  }
-
-  /*--------------------------------------------------------------
-    11. Ripple
-  --------------------------------------------------------------*/
-  function rippleInit() {
-    if ($.exists('.cs_ripple_activate')) {
-      $('.cs_ripple_activate').each(function () {
-        $('.cs_ripple_activate').ripples({
-          resolution: 512,
-          dropRadius: 20,
-          perturbance: 0.04,
-        });
-      });
-    }
-  }
-
-  /*--------------------------------------------------------------
-    12. Counter Animation
-  --------------------------------------------------------------*/
-  function counterInit() {
-    if ($.exists('.odometer')) {
-      $(window).on('scroll', function () {
-        function winScrollPosition() {
-          var scrollPos = $(window).scrollTop(),
-            winHeight = $(window).height();
-          var scrollPosition = Math.round(scrollPos + winHeight / 1.2);
-          return scrollPosition;
-        }
-
-        $('.odometer').each(function () {
-          var elemOffset = $(this).offset().top;
-          if (elemOffset < winScrollPosition()) {
-            $(this).html($(this).data('count-to'));
-          }
-        });
-      });
-    }
-  }
-
-  /*--------------------------------------------------------------
-    13. Accordian
+    7. Accordian
   --------------------------------------------------------------*/
   function accordian() {
     $('.cs_accordian').children('.cs_accordian_body').hide();
@@ -549,7 +335,7 @@
   }
 
   /*--------------------------------------------------------------
-    14. Tabs
+    8. Tabs
   --------------------------------------------------------------*/
   function tabs() {
     $('.cs_tabs .cs_tab_links a').on('click', function (e) {
@@ -564,20 +350,7 @@
   }
 
   /*--------------------------------------------------------------
-    15. Hover To Active
-  --------------------------------------------------------------*/
-  function hoverActive() {
-    $('.cs_hover_active .cs_case_study_in').hover(function () {
-      $(this)
-        .parents('.cs_hover_active')
-        .addClass('active')
-        .siblings()
-        .removeClass('active');
-    });
-  }
-
-  /*--------------------------------------------------------------
-    16. Progress Bar
+    9. Progress Bar
   --------------------------------------------------------------*/
   function progressBar() {
     $('.cs_progress').each(function () {
@@ -587,7 +360,7 @@
   }
 
   /*--------------------------------------------------------------
-    17. Review
+    10. Review
   --------------------------------------------------------------*/
   function review() {
     $('.cs_rating').each(function () {
@@ -595,131 +368,5 @@
       var reviewVal = review * 20 + '%';
       $(this).find('.cs_rating_percentage').css('width', reviewVal);
     });
-  }
-  /*--------------------------------------------------------------
-    18. Shining Active
-  --------------------------------------------------------------*/
-  function shiningActive() {
-    $('.cs_shining .cs_shining_btn').hover(
-      function () {
-        $(this)
-          .parents('.cs_shining')
-          .find('.cs_shining_item')
-          .addClass('active');
-      },
-      function () {
-        $(this)
-          .parents('.cs_shining')
-          .find('.cs_shining_item')
-          .removeClass('active');
-      },
-    );
-  }
-
-  /*--------------------------------------------------------------
-    19. Hobble Effect
-  --------------------------------------------------------------*/
-  function hobbleEffect() {
-    $(document)
-      .on('mousemove', '.cs_hobble', function (event) {
-        var halfW = this.clientWidth / 2;
-        var halfH = this.clientHeight / 2;
-        var coorX = halfW - (event.pageX - $(this).offset().left);
-        var coorY = halfH - (event.pageY - $(this).offset().top);
-        var degX1 = (coorY / halfH) * -10 + 'px';
-        var degY1 = (coorX / halfW) * 10 + 'px';
-        var degX2 = (coorY / halfH) * 15 + 'deg';
-        var degY2 = (coorX / halfW) * -15 + 'deg';
-
-        $(this)
-          .find('.cs_hover_layer_1')
-          .css('transform', function () {
-            return (
-              'perspective( 800px ) translateX(' +
-              degX1 +
-              ') translateY(' +
-              degY1 +
-              ') scale(1.02)'
-            );
-          });
-        $(this)
-          .find('.cs_hover_layer_2')
-          .css('transform', function () {
-            return (
-              'perspective( 800px ) translate3d( 0, 0, 0 ) rotateX(' +
-              degX2 +
-              ') rotateY(' +
-              degY2 +
-              ')'
-            );
-          });
-      })
-      .on('mouseout', '.cs_hobble', function () {
-        $(this).find('.cs_hover_layer_1').removeAttr('style');
-        $(this).find('.cs_hover_layer_2').removeAttr('style');
-      });
-  }
-
-  /*--------------------------------------------------------------
-    20. Scroll Slider
-  --------------------------------------------------------------*/
-  function scrollSliderActive() {
-    if ($.exists('.cs_scroll_slide') && $(window).width() > 991) {
-      var ctrl = new ScrollMagic.Controller({});
-      /* This each sets the animation */
-      $('.cs_scroll_slide').each(function (index, element) {
-        $(':root').css('scroll-behavior', 'initial');
-
-        /* scroll up */
-        new ScrollMagic.Scene({
-          triggerHook: 0,
-          triggerElement: this,
-          offset: -40,
-        })
-          .on('leave', function () {
-            console.log('scroll up = ', index);
-            TweenLite.to(window, 0.5, {
-              scrollTo: {
-                y:
-                  $(window).height() * (index - 1) +
-                  $('.cs_scroll_slider_container').offset().top,
-                autoKill: false,
-              },
-              ease: Linear.easeNone,
-            });
-          })
-          .addTo(ctrl);
-
-        /* scroll down */
-        new ScrollMagic.Scene({
-          triggerElement: this,
-          triggerHook: 0,
-          offset: 40,
-        })
-          .on('enter', function () {
-            console.log(
-              'scroll down = ',
-              $(window).height() +
-                ' * (' +
-                index +
-                '+1)+' +
-                $(window).scrollTop(),
-              $(window).height() * (index + 1) + $(window).scrollTop(),
-            );
-            TweenLite.to(window, 0.5, {
-              scrollTo: {
-                y:
-                  $(window).height() * (index + 1) +
-                  $('.cs_scroll_slider_container').offset().top,
-                autoKill: false,
-              },
-              ease: Linear.easeNone,
-            });
-          })
-          .addTo(ctrl);
-      });
-    }
-    var currentYear = new Date().getFullYear();
-    $('.cs_copyright_year').text(currentYear);
   }
 })(jQuery); // End of use strict
