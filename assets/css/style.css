@@ -1895,7 +1895,7 @@ label {
   gap: 10px;
   border-radius: 5px;
   border: 1px solid var(--accent);
-  padding: 14px 29px;
+  padding: 12px 29px;
   line-height: 1.714em;
   background-color: var(--accent);
   position: relative;
@@ -1947,6 +1947,18 @@ label {
   background-color: var(--accent);
   color: #fff;
   border-color: var(--accent);
+}
+.cs_btn.cs_style_1.cs_type_1 {
+  background-color: transparent;
+  color: var(--accent);
+  padding: 10px 25px;
+}
+.cs_btn.cs_style_1.cs_type_1::before {
+  display: none;
+}
+.cs_btn.cs_style_1.cs_type_1:hover {
+  background-color: var(--accent);
+  color: #fff;
 }
 
 .cs_text_btn {
@@ -3118,7 +3130,6 @@ label {
   margin-bottom: 14px;
 }
 
-.slick-slide .cs_hero.cs_style_2 .cs_hero_text,
 .slick-slide .cs_hero.cs_style_1 .cs_hero_text {
   position: relative;
   left: 50px;
@@ -3131,7 +3142,6 @@ label {
   transition: all 0.4s ease;
   opacity: 0;
 }
-.slick-slide.slick-current .cs_hero.cs_style_2 .cs_hero_text,
 .slick-slide.slick-current .cs_hero.cs_style_1 .cs_hero_text {
   opacity: 1;
   left: 0;
@@ -3142,6 +3152,20 @@ label {
   opacity: 1;
   -webkit-transition-delay: 0.7s;
           transition-delay: 0.7s;
+}
+
+.cs_hero.cs_style_2 .slick-slide .cs_hero_text {
+  position: relative;
+  left: 50px;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  opacity: 0;
+}
+.cs_hero.cs_style_2 .slick-slide.slick-current .cs_hero_text {
+  opacity: 1;
+  left: 0;
+  -webkit-transition-delay: 0.8s;
+          transition-delay: 0.8s;
 }
 
 .cs_show_md {
@@ -6491,7 +6515,7 @@ label {
   padding-left: 26px;
 }
 .cs_pricing_plan.cs_style_1 .cs_pricing_features li:not(:last-child) {
-  margin-bottom: 8px;
+  margin-bottom: 14px;
 }
 .cs_pricing_plan.cs_style_1 .cs_pricing_features li img {
   position: absolute;
@@ -6506,6 +6530,14 @@ label {
 }
 .cs_pricing_plan.cs_style_1:hover::before, .cs_pricing_plan.cs_style_1:hover::after {
   background-color: var(--accent);
+}
+.cs_pricing_plan.cs_style_1:hover .cs_btn.cs_style_1.cs_type_1 {
+  background-color: var(--accent);
+  color: #fff;
+}
+.cs_pricing_plan.cs_style_1:hover .cs_btn.cs_style_1.cs_type_1:hover {
+  background-color: var(--heading-color);
+  border-color: var(--heading-color);
 }
 
 /*--------------------------------------------------------------
@@ -6881,6 +6913,45 @@ label {
 .cs_tab_links.cs_style_1 .active a {
   background-color: var(--accent);
   color: #fff;
+}
+
+.cs_tab_links.cs_style_2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border: 1px solid var(--border);
+  border-radius: 1.6em;
+  background-color: #fff;
+  margin-bottom: 10px;
+}
+@media (max-width: 767px) {
+  .cs_tab_links.cs_style_2 {
+    margin-bottom: 0;
+    width: 100%;
+  }
+  .cs_tab_links.cs_style_2 li {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+  }
+  .cs_tab_links.cs_style_2 a {
+    width: 100%;
+  }
+}
+.cs_tab_links.cs_style_2 a {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  min-width: 115px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 7px 10px;
+}
+.cs_tab_links.cs_style_2 .active a {
+  background-color: var(--accent);
+  color: #fff;
+  border-radius: 1.6em;
 }
 
 .cs_about.cs_style_1 .cs_about_phone_number {

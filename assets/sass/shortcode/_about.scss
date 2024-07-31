@@ -37,6 +37,36 @@
     }
   }
 }
+.cs_tab_links.cs_style_2 {
+  display: flex;
+  border: 1px solid var(--border);
+  border-radius: 1.6em;
+  background-color: #fff;
+  margin-bottom: 10px;
+  @media (max-width: 767px) {
+    margin-bottom: 0;
+    width: 100%;
+    li {
+      flex: 1;
+    }
+    a {
+      width: 100%;
+    }
+  }
+  a {
+    display: inline-flex;
+    min-width: 115px;
+    justify-content: center;
+    padding: 7px 10px;
+  }
+  .active {
+    a {
+      background-color: var(--accent);
+      color: #fff;
+      border-radius: 1.6em;
+    }
+  }
+}
 .cs_about.cs_style_1 {
   .cs_about_phone_number {
     display: flex;

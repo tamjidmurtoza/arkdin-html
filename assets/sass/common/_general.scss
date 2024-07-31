@@ -263,7 +263,7 @@ label {
   gap: 10px;
   border-radius: 5px;
   border: 1px solid var(--accent);
-  padding: 14px 29px;
+  padding: 12px 29px;
   line-height: 1.714em;
   background-color: var(--accent);
   position: relative;
@@ -310,6 +310,18 @@ label {
       background-color: var(--accent);
       color: #fff;
       border-color: var(--accent);
+    }
+  }
+  &.cs_type_1 {
+    background-color: transparent;
+    color: var(--accent);
+    padding: 10px 25px;
+    &::before {
+      display: none;
+    }
+    &:hover {
+      background-color: var(--accent);
+      color: #fff;
     }
   }
 }

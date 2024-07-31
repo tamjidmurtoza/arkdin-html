@@ -314,7 +314,6 @@
   }
 }
 .slick-slide {
-  .cs_hero.cs_style_2,
   .cs_hero.cs_style_1 {
     .cs_hero_text {
       position: relative;
@@ -330,7 +329,6 @@
     }
   }
   &.slick-current {
-    .cs_hero.cs_style_2,
     .cs_hero.cs_style_1 {
       .cs_hero_text {
         opacity: 1;
@@ -346,6 +344,25 @@
     }
   }
 }
+
+.cs_hero.cs_style_2 {
+  .slick-slide {
+    .cs_hero_text {
+      position: relative;
+      left: 50px;
+      transition: all 0.4s ease;
+      opacity: 0;
+    }
+    &.slick-current {
+      .cs_hero_text {
+        opacity: 1;
+        left: 0;
+        transition-delay: 0.8s;
+      }
+    }
+  }
+}
+
 .cs_show_md {
   display: none !important;
 }
